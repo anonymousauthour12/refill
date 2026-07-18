@@ -1,0 +1,83 @@
+# Configuration file for project — copy this to config.yaml and fill in your credentials
+
+database:
+  host: localhost
+  port: 3306
+  user: root
+  password: YOUR_DB_PASSWORD
+
+llm:
+  api_key : YOUR_AZURE_API_KEY
+  api_version : 2024-12-01-preview
+  azure_endpoint : https://YOUR_RESOURCE.cognitiveservices.azure.com/
+  huggingface_access_token : ""
+  model : gpt-5
+  model_0_azure_endpoint : https://YOUR_RESOURCE.cognitiveservices.azure.com/
+  model_0_model : gpt-4o
+  model_0_tpm_limit : 44000000
+  model_0_max_context_tokens : 120000
+  model_1_azure_endpoint : https://YOUR_RESOURCE.services.ai.azure.com/openai/v1/
+  model_1_model : Llama-3.3-70B-Instruct
+  model_1_tpm_limit : 2000000
+  model_1_max_context_tokens : 120000
+  model_2_azure_endpoint : https://YOUR_RESOURCE.services.ai.azure.com/anthropic/
+  model_2_model : claude-opus-4-7
+  model_2_tpm_limit : 250000
+  model_2_max_context_tokens : 190000
+  model_3_azure_endpoint : https://YOUR_RESOURCE.cognitiveservices.azure.com/
+  model_3_model : gpt-5
+  model_3_tpm_limit : 39000000
+  model_3_max_context_tokens : 120000
+  temperature : 0
+  max_tokens : 4096
+  top_p : 0
+  frequency_penalty : 0
+  presence_penalty : 0
+
+folders:
+  temporary: workspace/tmp
+
+general:
+  # guided_search_mode applies to Strategy 4 (find_formula_smartly_selected.py) only.
+  # 0 = Tree   — LLM routes A through classification questions and commits to one branch.
+  # 1 = Flat   — All branches run sequentially; early_stopping controls when to stop.
+  # 2 = Single-shot — (not yet implemented)
+  guided_search_mode: 1
+  prompt_template: 3
+  number_of_data_points_from_target_table_to_send: 2
+  cleaning_threshold: 100
+  max_context_tokens: 120000
+  diagnoses_rows_count: 10
+  max_candidate_formulas_single_table: 10
+  max_candidate_formulas_count_exists: 10
+  max_candidate_formulas_across_tables: 10
+  schema_pruning_fk_hops: 3
+  max_tables_in_join_path: 4
+  is_computed_max_attempts: 5
+  data_sharing_size_limit_in_bytes: 20000
+  data_sharing_max_number_of_tockens: 5000
+
+
+execution:
+  early_stopping: False
+  use_sample_table: False
+  execute_query_max_tries: 5
+  different_formula_max_tries: 1
+
+
+data_sharing:
+# 0 - No data sharing at all [Restricted]
+# 1 - Sharing metadata in the initial prompt
+# 2 - Sharing data on diagnoses only [Default]
+# 3 - Sharing distinct values of each column in the initial prompt
+# 4 - Sharing random rows of each table in the initial prompt
+# 5 - Sharing data based on pk-fk relationships
+  #data_sharing_strategy: 5
+#
+  data_sharing_schema_and_diagnoses: 1
+  data_sharing_statistics_and_distinct_values: 1
+  data_sharing_random_rows_of_each_table: 1
+  data_sharing_selected_data_points: 0
+  data_sharing_strategy_2_number_of_distinct_samples: 5
+  data_sharing_strategy_3_number_of_rows: 5
+  maximum_potential_data_points_in_target_table: 10

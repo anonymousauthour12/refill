@@ -1,0 +1,29 @@
+# Config (contains credentials)
+config.yaml
+
+# Internal dev notes and placeholder tests
+CLAUDE.md
+tests/
+
+# Experiment outputs
+my_papers/
+related_papers/
+experiments/
+bulk_experiments/
+
+# Generated database info cache
+database_info/
+stored_prompts/
+uni/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
