@@ -1,0 +1,1 @@
+{"host": "db.example.org", "port": 3306, "user": "reader", "password": "secret"}

@@ -1,0 +1,1 @@
+{"provider": "azure_openai", "azure_endpoint": "https://example.cognitiveservices.azure.com/", "api_key": "key", "api_version": "2024-12-01-preview", "model": "gpt-5"}

@@ -1,0 +1,1 @@
+{"provider": "anthropic_foundry", "base_url": "https://example.services.ai.azure.com/anthropic/", "api_key": "key", "model": "claude-sonnet-5-5"}
