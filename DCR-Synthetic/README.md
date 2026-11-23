@@ -22,9 +22,3 @@ A formula returns `computed_value`, the value given by the formula, next to `act
 
 `YelpDataset3_S.Tips` has no key. The scripts add a helper column `tip_id` (a row number, not one of the 185 columns) that the formula of `Tips.draw_coefficient` uses.
 
-## Reproducibility
-
-On this data the scripts give the stored values for 183 of the 185 columns. Two columns differ slightly:
-
-- `ErgastF1_S.results.momentum_trace`: about 0.1% of the values (21 of 21,671) can change from one run to the next, because the formula has ties.
-- `lahman_2014_S.players.career_hr_best_season`: one value (stored as 0) is NULL when recomputed, because the batting rows of that player were removed after the value was computed.
