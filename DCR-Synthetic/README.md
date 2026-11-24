@@ -11,7 +11,7 @@
 
 ## formula_sql
 
-A formula returns `computed_value`, the value given by the formula, next to `actual_value`, the value stored in the column. For the 34 columns defined by iterative algorithms the formula is a script that builds temporary tables and ends with the final `SELECT`.
+A formula returns `computed_value`, the value given by the formula, next to `actual_value`, the value stored in the column. For the 34 columns defined by iterative algorithms the formula is a script that builds temporary tables and ends with the final `SELECT`. These formulas are impractical to write as a single SQL query. They are included as a stress test.
 
 ## Building the databases
 
